@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理系統</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2024-02-18T11:00:00+08:00</updated><entry><title>2024 Spring 課程</title><link href="./2024-Spring-w1-blog-tutorial.html" rel="alternate"></link><published>2024-02-18T11:00:00+08:00</published><updated>2024-02-18T01:42:14+08:00</updated><author><name>kmol</name></author><id>tag:None,2024-02-18:./2024-Spring-w1-blog-tutorial.html</id><summary type="html">&lt;p&gt;2024 Spring 網際內容管理與協同產品設計實習課程教學導引.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理系統</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2024-03-21T11:00:00+08:00</updated><entry><title>2024 Spring 課程</title><link href="./2024-Spring-w5-blog-tutorial.html" rel="alternate"></link><published>2024-03-21T11:00:00+08:00</published><updated>2024-03-21T06:52:12+08:00</updated><author><name>kmol</name></author><id>tag:None,2024-03-21:./2024-Spring-w5-blog-tutorial.html</id><summary type="html">&lt;p&gt;2024 Spring 網際內容管理與協同產品設計實習課程教學導引.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;2024 Spring 網際內容管理與協同產品設計實習課程教學導引.&lt;/p&gt;
 
 
-&lt;h1&gt;內容管理系統&lt;/h1&gt;
-&lt;p&gt;使用者可以自行利用 &lt;a href="https://github.com/mdecycu/cmsimde_site"&gt;cmsimde_site&lt;/a&gt; 倉儲作為 Template, 建立自己的網站內容管理系統.&lt;/p&gt;
+&lt;h1&gt;新增P65-P75頁翻譯翻譯&lt;/h1&gt;
+&lt;p&gt;被組長分配到翻譯P65-P75頁並翻譯完成上傳&lt;/p&gt;</content><category term="w5"></category><category term="網誌編寫"></category></entry><entry><title>2024 Spring 課程</title><link href="./2024-Spring-w4-blog-tutorial.html" rel="alternate"></link><published>2024-03-14T11:20:00+08:00</published><updated>2024-03-21T06:57:23+08:00</updated><author><name>kmol</name></author><id>tag:None,2024-03-14:./2024-Spring-w4-blog-tutorial.html</id><summary type="html">&lt;p&gt;2024 Spring 網際內容管理與協同產品設計實習課程教學導引.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;2024 Spring 網際內容管理與協同產品設計實習課程教學導引.&lt;/p&gt;
+
+
+&lt;h1&gt;在小組動態新增翻譯作業&lt;/h1&gt;
+&lt;p&gt;在小組動態創建翻譯作業並上傳&lt;/p&gt;</content><category term="w4"></category><category term="網誌編寫"></category></entry><entry><title>2024 Spring 課程</title><link href="./2024-Spring-w3-blog-tutorial.html" rel="alternate"></link><published>2024-03-07T14:00:00+08:00</published><updated>2024-03-21T07:00:13+08:00</updated><author><name>kmol</name></author><id>tag:None,2024-03-07:./2024-Spring-w3-blog-tutorial.html</id><summary type="html">&lt;p&gt;2024 Spring 網際內容管理與協同產品設計實習課程教學導引.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;2024 Spring 網際內容管理與協同產品設計實習課程教學導引.&lt;/p&gt;
+
+
+&lt;h1&gt;建立子模組&lt;/h1&gt;
+&lt;p&gt;將自己的倉儲設為小組倉儲的子模組&lt;/p&gt;</content><category term="w3"></category><category term="網誌編寫"></category></entry><entry><title>2024 Spring 課程</title><link href="./2024-Spring-w2-blog-tutorial.html" rel="alternate"></link><published>2024-02-29T15:00:00+08:00</published><updated>2024-03-21T07:02:56+08:00</updated><author><name>kmol</name></author><id>tag:None,2024-02-29:./2024-Spring-w2-blog-tutorial.html</id><summary type="html">&lt;p&gt;2024 Spring 網際內容管理與協同產品設計實習課程教學導引.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;2024 Spring 網際內容管理與協同產品設計實習課程教學導引.&lt;/p&gt;
+
+
+&lt;h1&gt;創立小組&lt;/h1&gt;
+&lt;p&gt;自行找好組員並將組員整合到統一倉儲內&lt;/p&gt;</content><category term="w2"></category><category term="網誌編寫"></category></entry><entry><title>2024 Spring 課程</title><link href="./2024-Spring-w1-blog-tutorial.html" rel="alternate"></link><published>2024-02-18T16:00:00+08:00</published><updated>2024-03-21T07:04:11+08:00</updated><author><name>kmol</name></author><id>tag:None,2024-02-18:./2024-Spring-w1-blog-tutorial.html</id><summary type="html">&lt;p&gt;2024 Spring 網際內容管理與協同產品設計實習課程教學導引.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;2024 Spring 網際內容管理與協同產品設計實習課程教學導引.&lt;/p&gt;
+
+
+&lt;h1&gt;創立倉儲&lt;/h1&gt;
+&lt;p&gt;建立個人倉儲&lt;/p&gt;
 &lt;p&gt;引用網站網址連結的方法:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/mdecycu/cmsimde_site"&gt;cmsimde_site&lt;/a&gt; - 在文章中多次引用同一個網站連結時, 可以使用此種方法.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/mdecycu/cmsimde_site"&gt;https://github.com/mdecycu/cmsimde_site&lt;/a&gt; - 假如想要快速將網址套用 html 網站連結, 可以使用此種方法.&lt;/p&gt;
