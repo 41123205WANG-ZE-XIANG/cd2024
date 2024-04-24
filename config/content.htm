@@ -6,7 +6,111 @@
 <p>網誌: <span style="color: #0000ff;"><a href="https://41123205wang-ze-xiang.github.io/cd2024/blog" style="color: #0000ff;">https://41123205wang-ze-xiang.github.io/cd2024/blog</a></span></p>
 <p>簡報: <span style="color: #0000ff;"><a href="https://41123205wang-ze-xiang.github.io/cd2024/reveal" style="color: #0000ff;">https://41123205wang-ze-xiang.github.io/cd2024/reveal</a></span></p>
 <p>倉儲: <span style="color: #0000ff;"><a href="https://github.com/41123205WANG-ZE-XIANG/cd2024" style="color: #0000ff;">https://github.com/41123205WANG-ZE-XIANG/cd2024</a></span></p>
-<h1>W5分組任務</h1>
+<h1>W9</h1>
+<p>鋼球平衡台 PID 控制與模擬</p>
+<p></p>
+<p>對 Gemini 1.5 Pro 提問:</p>
+<p>以下為利用 PID 控制 CoppeliaSim<span> </span><a href="http://229.cycu.org/ball_beam_balancing_PID_control_coppeliasim_1d_and_2d.7z">鋼球平衡台場景</a>的 ZMQ RemoteAPI Python 程式, 請利用 Python 模組將系統控制過程, 鋼球在平衡台上的 x 方向座標與 y 方向, 利用 matplotlib 畫出來. "這裡附上原本的 PID 控制程式碼"</p>
+<p><span>Gemini 1.5 Pro</span>回答:</p>
+<div _ngcontent-ng-c3669143999="" class="code-block-decoration header gmat-subtitle-1 ng-star-inserted"><span _ngcontent-ng-c3669143999="">Python</span></div>
+<div _ngcontent-ng-c3669143999="" class="code-block-internal-container">
+<pre _ngcontent-ng-c3669143999=""><code _ngcontent-ng-c3669143999="" class="code-container" data-sourcepos="1:1-126:10" data-test-id="code-content" role="text"><span class="hljs-keyword">import</span> zmq
+<span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+<span class="hljs-comment"># ZMQ 連接設定</span>
+context = zmq.Context()
+socket = context.socket(zmq.REQ)
+socket.connect(<span class="hljs-string">"tcp://127.0.0.1:5555"</span>)
+<span class="hljs-comment"># PID 控制參數</span>
+Kp = <span class="hljs-number">0.5</span>
+Ki = <span class="hljs-number">0.1</span>
+Kd = <span class="hljs-number">0.01</span>
+<span class="hljs-comment"># 參考資料</span>
+reference_x = <span class="hljs-number">0.0</span>
+reference_y = <span class="hljs-number">0.0</span>
+<span class="hljs-comment"># 實際狀態</span>
+x = <span class="hljs-number">0.0</span>
+y = <span class="hljs-number">0.0</span>
+<span class="hljs-comment"># 誤差</span>
+error_x = <span class="hljs-number">0.0</span>
+error_y = <span class="hljs-number">0.0</span>
+<span class="hljs-comment"># 累積誤差</span>
+integral_error_x = <span class="hljs-number">0.0</span>
+integral_error_y = <span class="hljs-number">0.0</span>
+<span class="hljs-comment"># 導數誤差</span>
+derivative_error_x = <span class="hljs-number">0.0</span>
+derivative_error_y = <span class="hljs-number">0.0</span>
+<span class="hljs-comment"># 控制訊號</span>
+control_signal_x = <span class="hljs-number">0.0</span>
+control_signal_y = <span class="hljs-number">0.0</span>
+<span class="hljs-comment"># 時間軸</span>
+time_axis = []
+<span class="hljs-comment"># x 方向座標</span>
+x_axis = []
+<span class="hljs-comment"># y 方向座標</span>
+y_axis = []
+<span class="hljs-comment"># 模擬時間</span>
+simulation_time = <span class="hljs-number">10.0</span>
+<span class="hljs-comment"># 模擬步長</span>
+simulation_step = <span class="hljs-number">0.01</span>
+<span class="hljs-comment"># 開始模擬</span>
+start_time = time.time()
+<span class="hljs-keyword">while</span> time.time() &lt; start_time + simulation_time:
+    <span class="hljs-comment"># 讀取實際狀態</span>
+    request = <span class="hljs-string">"get state"</span>
+    socket.send_string(request)
+    response = socket.recv_string()
+    state = <span class="hljs-built_in">eval</span>(response)
+    x = state[<span class="hljs-string">"x"</span>]
+    y = state[<span class="hljs-string">"y"</span>]
+    <span class="hljs-comment"># 計算誤差</span>
+    error_x = reference_x - x
+    error_y = reference_y - y
+    <span class="hljs-comment"># 累積誤差</span>
+    integral_error_x += error_x * simulation_step
+    integral_error_y += error_y * simulation_step
+    <span class="hljs-comment"># 導數誤差</span>
+    derivative_error_x = (x - previous_x) / simulation_step
+    derivative_error_y = (y - previous_y) / simulation_step
+    <span class="hljs-comment"># 更新控制訊號</span>
+    control_signal_x = Kp * error_x + Ki * integral_error_x + Kd * derivative_error_x
+    control_signal_y = Kp * error_y + Ki * integral_error_y + Kd * derivative_error_y
+    <span class="hljs-comment"># 限制控制訊號</span>
+    control_signal_x = <span class="hljs-built_in">max</span>(-<span class="hljs-number">10.0</span>, <span class="hljs-built_in">min</span>(<span class="hljs-number">10.0</span>, control_signal_x))
+    control_signal_y = <span class="hljs-built_in">max</span>(-<span class="hljs-number">10.0</span>, <span class="hljs-built_in">min</span>(<span class="hljs-number">10.0</span>, control_signal_y))
+    <span class="hljs-comment"># 送出控制訊號</span>
+    request = <span class="hljs-string">"set force"</span>
+    data = {<span class="hljs-string">"force_x"</span>: control_signal_x, <span class="hljs-string">"force_y"</span>: control_signal_y}
+    socket.send_string(request)
+    socket.send_string(<span class="hljs-built_in">str</span>(data))
+    <span class="hljs-comment"># 記錄數據</span>
+    time_axis.append(time.time() - start_time)
+    x_axis.append(x)
+    y_axis.append(y)
+    <span class="hljs-comment"># 更新狀態</span>
+    previous_x = x
+    previous_y = y
+    <span class="hljs-comment"># 延遲模擬步長</span>
+    time.sleep(simulation_step)
+<span class="hljs-comment"># 關閉 ZMQ 連接</span>
+socket.close()
+<span class="hljs-comment"># 繪製圖表</span>
+plt.figure(figsize=(<span class="hljs-number">10</span>, <span class="hljs-number">6</span>))
+plt.subplot(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>)
+plt.plot(time_axis, x_axis, label=<span class="hljs-string">"x"</span>)
+plt.plot(time_axis, reference_x * np.ones_like(time_axis), label=<span class="hljs-string">"reference_x"</span>)
+plt.xlabel(<span class="hljs-string">"Time (s)"</span>)
+plt.ylabel(<span class="hljs-string">"Position (m)"</span>)
+plt.legend()
+plt.subplot(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)
+plt.plot(time_axis, y_axis, label=<span class="hljs-string">"y"</span>)
+plt.plot(time_axis, reference_y * np.ones_like(time_axis), label=<span class="hljs-string">"reference_y"</span>)
+plt.xlabel(<span class="hljs-string">"Time (s)"</span>)
+plt.ylabel(<span class="hljs-string">"Position (m)"</span>)
+plt.legend()
+plt.tight_layout()
+plt.show()</code></pre>
+</div><h1>W5分組任務</h1>
 <p>41123205</p>
 <p><span>自評分數:65</span></p>
 <p><span>1.建立個人課程倉儲與網站</span></p>
