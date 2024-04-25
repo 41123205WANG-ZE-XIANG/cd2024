@@ -1,51 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理系統 - w9</title><link href="./" rel="alternate"></link><link href="./feeds/w9.atom.xml" rel="self"></link><id>./</id><updated>2024-04-25T06:40:48+08:00</updated><entry><title>41123205-W9</title><link href="./41123205-W9-blog.html" rel="alternate"></link><published>2024-04-18T19:57:00+08:00</published><updated>2024-04-25T06:40:48+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-04-18:./41123205-W9-blog.html</id><summary type="html">&lt;p&gt;期中考週&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理系統 - w9</title><link href="./" rel="alternate"></link><link href="./feeds/w9.atom.xml" rel="self"></link><id>./</id><updated>2024-04-25T06:51:33+08:00</updated><entry><title>41123205-W9</title><link href="./41123205-W9-blog.html" rel="alternate"></link><published>2024-04-18T19:57:00+08:00</published><updated>2024-04-25T06:51:33+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-04-18:./41123205-W9-blog.html</id><summary type="html">&lt;p&gt;期中考週&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;期中考週&lt;/p&gt;
 
 
 &lt;h1&gt;期中考週&lt;/h1&gt;
 &lt;p&gt;對 Gemini 1.5 Pro 提問:&lt;/p&gt;
-&lt;p&gt;以下為利用 PID 控制 CoppeliaSim 鋼球平衡台場景的 ZMQ RemoteAPI Python 程式, 請利用 Python 模組將系統控制過程, 鋼球在平衡台上的 x 方向座標與 y 方向, 利用 matplotlib 畫出來. "這裡附上原本的 PID 控制程式碼"
-import zmq
-import time
-import matplotlib.pyplot as plt
-import numpy as np  # 添加 NumPy 庫&lt;/p&gt;
-&lt;h1&gt;... (您的現有程式碼) ...&lt;/h1&gt;
-&lt;h1&gt;主迴圈&lt;/h1&gt;
-&lt;p&gt;while time.time() &amp;lt; start_time + simulation_time:
-    # ... (您的 PID 控制邏輯) ...&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gh"&gt;#&lt;/span&gt; 讀取鋼球位置
-&lt;span class="gh"&gt;#&lt;/span&gt; ...
+&lt;p&gt;以下為利用 PID 控制 CoppeliaSim 鋼球平衡台場景的 ZMQ RemoteAPI Python 程式, 請利用 Python 模組將系統控制過程, 鋼球在平衡台上的 x 方向座標與 y 方向, 利用 matplotlib 畫出來. "這裡附上原本的 PID 控制程式碼" &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;zmq&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;  &lt;span class="c1"&gt;# 添加 NumPy 庫&lt;/span&gt;
+&lt;span class="c1"&gt;#... (您的現有程式碼) ...&lt;/span&gt;
+&lt;span class="c1"&gt;#主迴圈&lt;/span&gt;
+&lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;start_time&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; 
+&lt;span class="n"&gt;simulation_time&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="c1"&gt;# ... (您的 PID 控制邏輯) ...&lt;/span&gt;
+&lt;span class="c1"&gt;# 讀取鋼球位置&lt;/span&gt;
+&lt;span class="c1"&gt;# ... &lt;/span&gt;
+&lt;span class="c1"&gt;# ... (您的 PID 控制邏輯) ...&lt;/span&gt;
+&lt;span class="c1"&gt;# 記錄數據&lt;/span&gt;
+&lt;span class="n"&gt;time_axis&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="kp"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;start_time&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;x_axis&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="kp"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;y_axis&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="kp"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;# ... (您的現有程式碼) ...&lt;/span&gt;
+&lt;span class="c1"&gt;#關閉 ZMQ 連接&lt;/span&gt;
+&lt;span class="c1"&gt;#...&lt;/span&gt;
+&lt;span class="c1"&gt;#繪製圖表 (將以下程式碼添加到您的程式碼末尾)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;figure&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;figsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subplot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;time_axis&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x_axis&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;x&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;time_axis&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;reference_x&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; 
+&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="kp"&gt;ones_like&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;time_axis&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; 
+&lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;reference_x&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# 使用 NumPy 創建參考線&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xlabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Time (s)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ylabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Position (m)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;legend&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subplot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;time_axis&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y_axis&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;y&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;time_axis&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;reference_y&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; 
+&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="kp"&gt;ones_like&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;time_axis&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;reference_y&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# 使用 NumPy 創建參考線&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xlabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Time (s)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ylabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Position (m)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;legend&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tight_layout&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;span class="gh"&gt;#&lt;/span&gt; ... (您的 PID 控制邏輯) ...
-
-&lt;span class="gh"&gt;#&lt;/span&gt; 記錄數據
-time_axis.append(time.time() - start_time)
-x_axis.append(x)
-y_axis.append(y)
-
-&lt;span class="gh"&gt;#&lt;/span&gt; ... (您的現有程式碼) ...
-
-&lt;span class="gh"&gt;#&lt;/span&gt;關閉 ZMQ 連接
-
-&lt;span class="gh"&gt;#&lt;/span&gt;...
-
-&lt;span class="gh"&gt;#&lt;/span&gt;繪製圖表 (將以下程式碼添加到您的程式碼末尾)
-
-plt.figure(figsize=(10, 6))
-plt.subplot(2, 1, 1)
-plt.plot(time_axis, x_axis, label=&amp;quot;x&amp;quot;)
-plt.plot(time_axis, reference_x * np.ones_like(time_axis), label=&amp;quot;reference_x&amp;quot;)
-&lt;span class="gh"&gt;#&lt;/span&gt;使用 NumPy 創建參考線
-plt.xlabel(&amp;quot;Time (s)&amp;quot;)
-plt.ylabel(&amp;quot;Position (m)&amp;quot;)
-plt.legend()
-plt.plot(time_axis, y_axis, label=&amp;quot;y&amp;quot;)
-plt.plot(time_axis, reference_y *np.ones_like(time_axis), label=&amp;quot;reference_y&amp;quot;)
-&lt;span class="gh"&gt;#&lt;/span&gt;使用 NumPy 創建參考線
-plt.xlabel(&amp;quot;Time (s)&amp;quot;)
-plt.ylabel(&amp;quot;Position (m)&amp;quot;)
-plt.legend()
-plt.tight_layout()
-plt.show()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="w9"></category><category term="網誌編寫"></category></entry></feed>
+&lt;p&gt;解釋：
+導入 NumPy: 我們添加了 import numpy as np 以便使用 NumPy 函數創建參考線。
+繪圖: 在主循環結束後，我們添加了繪圖代碼。
+子圖: 我們創建了兩個子圖，一個用於 x 方向，另一個用於 y 方向。
+繪製數據: 我們使用 plt.plot 繪製 x 和 y 軸的位置數據。
+參考線: 我們使用 np.ones_like(time_axis) 創建與時間軸長度相同的數組，並將其乘以參考值 (reference_x 和 reference_y) 以創建參考線。
+標籤和圖例: 我們添加了 x 和 y 軸標籤以及圖例。
+顯示圖形: 最後，我們使用 plt.show() 顯示圖形。
+現在，當您運行您的 PID 控制程式碼時，它將顯示一個圖形，其中包含 x 和 y 方向的位置以及相應的參考線。這將幫助您視覺化鋼球在平衡台上的控制過程。&lt;/p&gt;</content><category term="w9"></category><category term="網誌編寫"></category></entry></feed>
