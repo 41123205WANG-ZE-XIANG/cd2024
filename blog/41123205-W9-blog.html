@@ -59,7 +59,7 @@
 <meta property="og:url" content="./41123205-W9-blog.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2024-04-18 19:57:00+08:00"/>
-<meta property="article:modified_time" content="2024-04-25 06:51:33.085902+08:00"/>
+<meta property="article:modified_time" content="2024-04-25 07:02:07.785013+08:00"/>
 <meta property="article:author" content="./author/41123205.html">
 <meta property="article:section" content="w9"/>
 <meta property="article:tag" content="網誌編寫"/>
@@ -74,7 +74,7 @@
   "name": "41123205-W9",
   "headline": "41123205-W9",
   "datePublished": "2024-04-18 19:57:00+08:00",
-  "dateModified": "2024-04-25 06:51:33.085902+08:00",
+  "dateModified": "2024-04-25 07:02:07.785013+08:00",
   "author": {
     "@type": "Person",
     "name": "41123205",
@@ -240,52 +240,101 @@ init_mathjax();
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">zmq</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  <span class="c1"># 添加 NumPy 庫</span>
-<span class="c1">#... (您的現有程式碼) ...</span>
-<span class="c1">#主迴圈</span>
-<span class="k">while</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">start_time</span> <span class="o">+</span> 
-<span class="n">simulation_time</span><span class="p">:</span>
-<span class="c1"># ... (您的 PID 控制邏輯) ...</span>
-<span class="c1"># 讀取鋼球位置</span>
-<span class="c1"># ... </span>
-<span class="c1"># ... (您的 PID 控制邏輯) ...</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="c1">#ZMQ 連接設定</span>
+<span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+<span class="n">socket</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">REQ</span><span class="p">)</span>
+<span class="n">socket</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;tcp://127.0.0.1:5555&quot;</span><span class="p">)</span>
+<span class="c1">#PID 控制參數</span>
+<span class="n">Kp</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">Ki</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">Kd</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="c1">#參考資料</span>
+<span class="n">reference_x</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">reference_y</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="c1">#實際狀態</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="c1">#誤差</span>
+<span class="n">error_x</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">error_y</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="c1">#累積誤差</span>
+<span class="n">integral_error_x</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">integral_error_y</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="c1">#導數誤差</span>
+<span class="n">derivative_error_x</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">derivative_error_y</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="c1">#控制訊號</span>
+<span class="n">control_signal_x</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">control_signal_y</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="c1">#時間軸</span>
+<span class="n">time_axis</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1">#x 方向座標</span>
+<span class="n">x_axis</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1">#y 方向座標</span>
+<span class="n">y_axis</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1">#模擬時間</span>
+<span class="n">simulation_time</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="c1">#模擬步長</span>
+<span class="n">simulation_step</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="c1">#開始模擬</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">while</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">start_time</span> <span class="o">+</span>       <span class="n">simulation_time</span><span class="p">:</span>
+<span class="c1"># 讀取實際狀態</span>
+<span class="n">request</span> <span class="o">=</span> <span class="s2">&quot;get state&quot;</span>
+<span class="n">socket</span><span class="o">.</span><span class="n">send_string</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">recv_string</span><span class="p">()</span>
+<span class="n">state</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
+<span class="c1"># 計算誤差</span>
+<span class="n">error_x</span> <span class="o">=</span> <span class="n">reference_x</span> <span class="o">-</span> <span class="n">x</span>
+<span class="n">error_y</span> <span class="o">=</span> <span class="n">reference_y</span> <span class="o">-</span> <span class="n">y</span>
+<span class="c1"># 累積誤差</span>
+<span class="n">integral_error_x</span> <span class="o">+=</span> <span class="n">error_x</span> <span class="o">*</span> <span class="n">simulation_step</span>
+<span class="n">integral_error_y</span> <span class="o">+=</span> <span class="n">error_y</span> <span class="o">*</span> <span class="n">simulation_step</span>
+<span class="c1"># 導數誤差</span>
+<span class="n">derivative_error_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">previous_x</span><span class="p">)</span> <span class="o">/</span> <span class="n">simulation_step</span>
+<span class="n">derivative_error_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">previous_y</span><span class="p">)</span> <span class="o">/</span> <span class="n">simulation_step</span>
+<span class="c1"># 更新控制訊號</span>
+<span class="n">control_signal_x</span> <span class="o">=</span> <span class="n">Kp</span> <span class="o">*</span> <span class="n">error_x</span> <span class="o">+</span> <span class="n">Ki</span> <span class="o">*</span> <span class="n">integral_error_x</span> <span class="o">+</span> <span class="n">Kd</span> <span class="o">*</span> <span class="n">derivative_error_x</span>
+<span class="n">control_signal_y</span> <span class="o">=</span> <span class="n">Kp</span> <span class="o">*</span> <span class="n">error_y</span> <span class="o">+</span> <span class="n">Ki</span> <span class="o">*</span> <span class="n">integral_error_y</span> <span class="o">+</span> <span class="n">Kd</span> <span class="o">*</span> <span class="n">derivative_error_y</span>
+<span class="c1"># 限制控制訊號</span>
+<span class="n">control_signal_x</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="o">-</span><span class="mf">10.0</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">control_signal_x</span><span class="p">))</span>
+<span class="n">control_signal_y</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="o">-</span><span class="mf">10.0</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">control_signal_y</span><span class="p">))</span>
+<span class="c1"># 送出控制訊號</span>
+<span class="n">request</span> <span class="o">=</span> <span class="s2">&quot;set force&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;force_x&quot;</span><span class="p">:</span> <span class="n">control_signal_x</span><span class="p">,</span> <span class="s2">&quot;force_y&quot;</span><span class="p">:</span> <span class="n">control_signal_y</span><span class="p">}</span>
+<span class="n">socket</span><span class="o">.</span><span class="n">send_string</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="n">socket</span><span class="o">.</span><span class="n">send_string</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 <span class="c1"># 記錄數據</span>
 <span class="n">time_axis</span><span class="o">.</span><span class="kp">append</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span>
 <span class="n">x_axis</span><span class="o">.</span><span class="kp">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">y_axis</span><span class="o">.</span><span class="kp">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="c1"># ... (您的現有程式碼) ...</span>
+<span class="c1"># 更新狀態</span>
+<span class="n">previous_x</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">previous_y</span> <span class="o">=</span> <span class="n">y</span>
+<span class="c1"># 延遲模擬步長</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">simulation_step</span><span class="p">)</span>
 <span class="c1">#關閉 ZMQ 連接</span>
-<span class="c1">#...</span>
-<span class="c1">#繪製圖表 (將以下程式碼添加到您的程式碼末尾)</span>
+<span class="n">socket</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="c1">#繪製圖表</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_axis</span><span class="p">,</span> <span class="n">x_axis</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_axis</span><span class="p">,</span> <span class="n">reference_x</span> <span class="o">*</span> 
-<span class="n">np</span><span class="o">.</span><span class="kp">ones_like</span><span class="p">(</span><span class="n">time_axis</span><span class="p">),</span> 
-<span class="n">label</span><span class="o">=</span><span class="s2">&quot;reference_x&quot;</span><span class="p">)</span>  <span class="c1"># 使用 NumPy 創建參考線</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_axis</span><span class="p">,</span> <span class="n">reference_x</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="kp">ones_like</span><span class="p">(</span><span class="n">time_axis</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;reference_x&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time (s)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Position (m)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_axis</span><span class="p">,</span> <span class="n">y_axis</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_axis</span><span class="p">,</span> <span class="n">reference_y</span> <span class="o">*</span> 
-<span class="n">np</span><span class="o">.</span><span class="kp">ones_like</span><span class="p">(</span><span class="n">time_axis</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;reference_y&quot;</span><span class="p">)</span>  <span class="c1"># 使用 NumPy 創建參考線</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_axis</span><span class="p">,</span> <span class="n">reference_y</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="kp">ones_like</span><span class="p">(</span><span class="n">time_axis</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;reference_y&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time (s)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Position (m)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-
-<p>解釋：
-導入 NumPy: 我們添加了 import numpy as np 以便使用 NumPy 函數創建參考線。
-繪圖: 在主循環結束後，我們添加了繪圖代碼。
-子圖: 我們創建了兩個子圖，一個用於 x 方向，另一個用於 y 方向。
-繪製數據: 我們使用 plt.plot 繪製 x 和 y 軸的位置數據。
-參考線: 我們使用 np.ones_like(time_axis) 創建與時間軸長度相同的數組，並將其乘以參考值 (reference_x 和 reference_y) 以創建參考線。
-標籤和圖例: 我們添加了 x 和 y 軸標籤以及圖例。
-顯示圖形: 最後，我們使用 plt.show() 顯示圖形。
-現在，當您運行您的 PID 控制程式碼時，它將顯示一個圖形，其中包含 x 和 y 方向的位置以及相應的參考線。這將幫助您視覺化鋼球在平衡台上的控制過程。</p>
             </section>
 
             <section class="post-info">
