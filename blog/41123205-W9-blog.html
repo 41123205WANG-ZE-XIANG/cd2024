@@ -59,7 +59,7 @@
 <meta property="og:url" content="./41123205-W9-blog.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2024-04-18 19:57:00+08:00"/>
-<meta property="article:modified_time" content="2024-04-25 06:13:09.133129+08:00"/>
+<meta property="article:modified_time" content="2024-04-25 06:40:48.682805+08:00"/>
 <meta property="article:author" content="./author/41123205.html">
 <meta property="article:section" content="w9"/>
 <meta property="article:tag" content="網誌編寫"/>
@@ -74,7 +74,7 @@
   "name": "41123205-W9",
   "headline": "41123205-W9",
   "datePublished": "2024-04-18 19:57:00+08:00",
-  "dateModified": "2024-04-25 06:13:09.133129+08:00",
+  "dateModified": "2024-04-25 06:40:48.682805+08:00",
   "author": {
     "@type": "Person",
     "name": "41123205",
@@ -236,7 +236,50 @@ init_mathjax();
 
 <h1>期中考週</h1>
 <p>對 Gemini 1.5 Pro 提問:</p>
-<p>以下為利用 PID 控制 CoppeliaSim 鋼球平衡台場景的 ZMQ RemoteAPI Python 程式, 請利用 Python 模組將系統控制過程, 鋼球在平衡台上的 x 方向座標與 y 方向, 利用 matplotlib 畫出來. "這裡附上原本的 PID 控制程式碼"</p>
+<p>以下為利用 PID 控制 CoppeliaSim 鋼球平衡台場景的 ZMQ RemoteAPI Python 程式, 請利用 Python 模組將系統控制過程, 鋼球在平衡台上的 x 方向座標與 y 方向, 利用 matplotlib 畫出來. "這裡附上原本的 PID 控制程式碼"
+import zmq
+import time
+import matplotlib.pyplot as plt
+import numpy as np  # 添加 NumPy 庫</p>
+<h1>... (您的現有程式碼) ...</h1>
+<h1>主迴圈</h1>
+<p>while time.time() &lt; start_time + simulation_time:
+    # ... (您的 PID 控制邏輯) ...</p>
+<div class="highlight"><pre><span></span><code><span class="gh">#</span> 讀取鋼球位置
+<span class="gh">#</span> ...
+
+<span class="gh">#</span> ... (您的 PID 控制邏輯) ...
+
+<span class="gh">#</span> 記錄數據
+time_axis.append(time.time() - start_time)
+x_axis.append(x)
+y_axis.append(y)
+
+<span class="gh">#</span> ... (您的現有程式碼) ...
+
+<span class="gh">#</span>關閉 ZMQ 連接
+
+<span class="gh">#</span>...
+
+<span class="gh">#</span>繪製圖表 (將以下程式碼添加到您的程式碼末尾)
+
+plt.figure(figsize=(10, 6))
+plt.subplot(2, 1, 1)
+plt.plot(time_axis, x_axis, label=&quot;x&quot;)
+plt.plot(time_axis, reference_x * np.ones_like(time_axis), label=&quot;reference_x&quot;)
+<span class="gh">#</span>使用 NumPy 創建參考線
+plt.xlabel(&quot;Time (s)&quot;)
+plt.ylabel(&quot;Position (m)&quot;)
+plt.legend()
+plt.plot(time_axis, y_axis, label=&quot;y&quot;)
+plt.plot(time_axis, reference_y *np.ones_like(time_axis), label=&quot;reference_y&quot;)
+<span class="gh">#</span>使用 NumPy 創建參考線
+plt.xlabel(&quot;Time (s)&quot;)
+plt.ylabel(&quot;Position (m)&quot;)
+plt.legend()
+plt.tight_layout()
+plt.show()
+</code></pre></div>
             </section>
 
             <section class="post-info">
