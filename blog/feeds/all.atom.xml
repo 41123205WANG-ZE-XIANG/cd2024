@@ -14,14 +14,15 @@
 在第七週摘要出 cd2024 各項分組協同模式的要點及執行方法.
 在第八週說明如何應用 AI 協助先前閱讀論文, 整理資料以及延伸模擬程式的方法, 並提出既存鋼球平衡台控制與模擬的實習步驟.
 第十週起, 要求學員完成三項實習任務. (建立倉儲與網站連結、PID 控制文獻整理、NX 平台零組件繪圖)
-第十二週的三項實習任務 (NXOpen 零組件繪製、分組倉儲設為評分倉儲子模組、足球機器人場景模擬).&lt;/p&gt;</content><category term="w13"></category><category term="網誌編寫"></category></entry><entry><title>41123205-W12</title><link href="./41123205-W12-blog.html" rel="alternate"></link><published>2024-05-09T20:18:00+08:00</published><updated>2024-05-16T08:08:06+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-05-09:./41123205-W12-blog.html</id><summary type="html">&lt;p&gt;各學員利用 NX 1872 繪製鋼球平衡台所需的零組件, 將各分組倉儲設為評分倉儲的子模組, 跨網路操控模擬場景裝置.&lt;/p&gt;
+第十二週的三項實習任務 (NXOpen 零組件繪製、分組倉儲設為評分倉儲子模組、足球機器人場景模擬).&lt;/p&gt;</content><category term="w13"></category><category term="網誌編寫"></category></entry><entry><title>41123205-W12</title><link href="./41123205-W12-blog.html" rel="alternate"></link><published>2024-05-09T20:18:00+08:00</published><updated>2024-05-16T08:20:29+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-05-09:./41123205-W12-blog.html</id><summary type="html">&lt;p&gt;各學員利用 NX 1872 繪製鋼球平衡台所需的零組件, 將各分組倉儲設為評分倉儲的子模組, 跨網路操控模擬場景裝置.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;各學員利用 NX 1872 繪製鋼球平衡台所需的零組件, 將各分組倉儲設為評分倉儲的子模組, 跨網路操控模擬場景裝置.&lt;/p&gt;
 
 
 &lt;h1&gt;鋼球平衡台自動控制系統模擬&lt;/h1&gt;
 &lt;p&gt;NXOpen Python 程式
 &lt;a href="https://www.google.com.tw/"&gt;TO GOOGLE&lt;/a&gt;
-心得:我一開始認為NX是一個非常不直覺得程式，因為每一次當我要在自己所畫的模型之中穿出一個孔時，就常常會要重新選擇挖孔還是增長，所以來終於習慣NX的擠出功能了，繪畫的速度就較為快速了。&lt;/p&gt;</content><category term="w12"></category><category term="網誌編寫"></category></entry><entry><title>41123205-W11</title><link href="./41123205-W11-blog.html" rel="alternate"></link><published>2024-05-02T21:18:00+08:00</published><updated>2024-05-16T07:48:38+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-05-02:./41123205-W11-blog.html</id><summary type="html">&lt;p&gt;各學員利用 NX 1872 繪製鋼球平衡台所需的零組件.&lt;/p&gt;
+輸入https://drive.google.com/file/d/1DmwGGZOWa9V9j4-biT4ZLUAbon_0DiEC/view?usp=drive_link下在零件檔與https://drive.google.com/file/d/1ZOICXm_jkRpNZD92DL3qMpA9zQIzdom5/view?usp=drive_link之NXOpen Python 程式&lt;/p&gt;
+&lt;p&gt;心得:我一開始認為NX是一個非常不直覺得程式，因為每一次當我要在自己所畫的模型之中穿出一個孔時，就常常會要重新選擇挖孔還是增長，所以來終於習慣NX的擠出功能了，繪畫的速度就較為快速了。&lt;/p&gt;</content><category term="w12"></category><category term="網誌編寫"></category></entry><entry><title>41123205-W11</title><link href="./41123205-W11-blog.html" rel="alternate"></link><published>2024-05-02T21:18:00+08:00</published><updated>2024-05-16T07:48:38+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-05-02:./41123205-W11-blog.html</id><summary type="html">&lt;p&gt;各學員利用 NX 1872 繪製鋼球平衡台所需的零組件.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;各學員利用 NX 1872 繪製鋼球平衡台所需的零組件.&lt;/p&gt;
 
 
