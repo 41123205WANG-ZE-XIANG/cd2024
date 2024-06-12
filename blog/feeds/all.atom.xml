@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理系統</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2024-06-12T14:28:27+08:00</updated><entry><title>41123205-W15</title><link href="./41123205-W15-blog.html" rel="alternate"></link><published>2024-05-30T20:00:00+08:00</published><updated>2024-06-12T14:27:13+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-05-30:./41123205-W15-blog.html</id><summary type="html">&lt;p&gt;組合鋼球平衡台&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理系統</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2024-06-12T14:37:22+08:00</updated><entry><title>41123205-W15</title><link href="./41123205-W15-blog.html" rel="alternate"></link><published>2024-05-30T20:00:00+08:00</published><updated>2024-06-12T14:34:12+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-05-30:./41123205-W15-blog.html</id><summary type="html">&lt;p&gt;組合鋼球平衡台&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;組合鋼球平衡台&lt;/p&gt;
 
 
 &lt;h1&gt;組合鋼球平衡台&lt;/h1&gt;
-&lt;p&gt;足球機器人網際場景模擬
-在可攜程式系統安裝所需的 Python 模組: pip install pyzmq cbor keyboard
-在近端電腦上取下倉儲內容: git clone https://github.com/mdecd2023/2a3-pj3ag4
-球場、球員、數位計分器與類比計分器場景, 以及機器人球員控制程式位於: 2a3-pj3ag4\downloads\zmq_football 目錄
-利用 CoppeliaSim 4.5.1 rev1 for IPv6.7z 開啟 zmq_football 目錄中的 site.ttt
-利用可攜程式系統中的 SciTE 編輯器開啟 zmq_football 目錄中的 judge.py, 按下 Tools - Go 之後, CoppeliaSim 中的足球場景將開始進行模擬, 足球從球場正中央拋下, 兩隊球員完成列隊, 準備接受遠端 ZMQ RemoteAPI Python 程式操控, 以便進行球賽競技.
-模擬影片:
+&lt;p&gt;足球機器人網際場景模擬&lt;/p&gt;
+&lt;p&gt;1.在可攜程式系統安裝所需的Python模組:pip install pyzmq cbor keyboard&lt;/p&gt;
+&lt;p&gt;2.在近端電腦上取下倉儲內容:git clone https://github.com/mdecd2023/2a3-pj3ag4
+球場、球員、數位計分器與類比計分器場景,以及機器人球員控制程式位於: 2a3-pj3ag4\downloads\zmq_football 目錄&lt;/p&gt;
+&lt;p&gt;3.利用CoppeliaSim 4.5.1 rev1 for IPv6.7z開啟 zmq_football目錄中的site.ttt&lt;/p&gt;
+&lt;p&gt;4.利用可攜程式系統中的SciTE編輯器開啟zmq_football目錄中的judge.py,按下Tools - Go之後, CoppeliaSim中的足球場景將開始進行模擬,足球從球場正中央拋下,兩隊球員完成列隊,準備接受遠端ZMQ RemoteAPI Python程式操控,以便進行球賽競技.&lt;/p&gt;
+&lt;p&gt;模擬影片:
 https://youtu.be/PVvuAvX78LQ?si=5Wv_U9Jq_6Mav_tR&lt;/p&gt;</content><category term="w15"></category><category term="網誌編寫"></category></entry><entry><title>41123205-W14</title><link href="./41123205-W14-blog.html" rel="alternate"></link><published>2024-05-23T22:00:00+08:00</published><updated>2024-05-30T05:02:24+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-05-23:./41123205-W14-blog.html</id><summary type="html">&lt;p&gt;組合鋼球平衡台&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;組合鋼球平衡台&lt;/p&gt;
 
 
 &lt;h1&gt;組合鋼球平衡台&lt;/h1&gt;
-&lt;p&gt;將5個零件利用NX1872中的約束指令進行組裝&lt;/p&gt;</content><category term="w14"></category><category term="網誌編寫"></category></entry><entry><title>41123205-W13</title><link href="./41123205-W13-blog.html" rel="alternate"></link><published>2024-05-16T19:18:00+08:00</published><updated>2024-06-12T14:28:27+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-05-16:./41123205-W13-blog.html</id><summary type="html">&lt;p&gt;確認進度&lt;/p&gt;
+&lt;p&gt;將5個零件利用NX1872中的約束指令進行組裝&lt;/p&gt;</content><category term="w14"></category><category term="網誌編寫"></category></entry><entry><title>41123205-W13</title><link href="./41123205-W13-blog.html" rel="alternate"></link><published>2024-05-16T19:18:00+08:00</published><updated>2024-06-12T14:34:44+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-05-16:./41123205-W13-blog.html</id><summary type="html">&lt;p&gt;確認進度&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;確認進度&lt;/p&gt;
 
 
 &lt;h1&gt;各週指定任務&lt;/h1&gt;
-&lt;p&gt;1.個人 cd2024 與分組倉儲的建立及維護.
-2.各分組註冊一個 Odoo 帳號, 選用免費的 PLM 模組, 取得各分組的產品生命週期管理系統網域, 並將參考論文的協同翻譯流程作為工作項目, 在各分組的 PLM 網域系統中留下任務分配與紀錄, 最終產出為一份參考論文的中英文翻譯並列 pdf 檔案, 其中包含各組員的心得報告.
-3.指定在參考論文的翻譯與閱讀過程, 將各組員的 cd2024 課程倉儲納為分組倉儲的子模組, 可以將各組員倉儲中的 LaTeX 原始資料, 整合至分組倉儲中, 採 Github Actions 或近端使用 MikTeX 建立分組的參考論文閱讀報告 pdf 檔案(教學).
-4.要求各分組採協同方式, 在各教學影片上填上字幕並嵌入個人網站, 分工整理影片逐字稿與教學重點, 最後完成期中自評, 在期中考週將自評成績送至教務處.
-5.要求下載 Siemens NX 1872 至個人隨身碟或電腦 (含筆電), 後續專案系統的零組件繪圖可採電腦輔助設計室固態硬碟所安裝的 NX1872 或隨身碟中的可攜系統, 必須透過連網取得認證後才能開啟.
-6.提醒 CoppeliaSim 不同版本中存檔上的差異, 並強調 cd2024 將沿用 cad2023 課程中所使用的 4.5.1 版.
-7.提示 各分組可以利用可攜式 Sourcetree 套件, 在近端充分了解個人倉儲與分組倉儲的各種改版或解決衝突議題.
-8.在第七週摘要出 cd2024 各項分組協同模式的要點及執行方法.
-9.在第八週說明如何應用 AI 協助先前閱讀論文, 整理資料以及延伸模擬程式的方法, 並提出既存鋼球平衡台控制與模擬的實習步驟.
-10.第十週起, 要求學員完成三項實習任務. (建立倉儲與網站連結、PID 控制文獻整理、NX 平台零組件繪圖)
-11.第十二週的三項實習任務 (NXOpen 零組件繪製、分組倉儲設為評分倉儲子模組、足球機器人場景模擬).&lt;/p&gt;</content><category term="w13"></category><category term="網誌編寫"></category></entry><entry><title>41123205-W12</title><link href="./41123205-W12-blog.html" rel="alternate"></link><published>2024-05-09T20:18:00+08:00</published><updated>2024-05-30T04:57:51+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-05-09:./41123205-W12-blog.html</id><summary type="html">&lt;p&gt;各學員利用 NX 1872 繪製鋼球平衡台所需的零組件, 將各分組倉儲設為評分倉儲的子模組, 跨網路操控模擬場景裝置.&lt;/p&gt;
+&lt;p&gt;1.個人 cd2024 與分組倉儲的建立及維護.&lt;/p&gt;
+&lt;p&gt;2.各分組註冊一個 Odoo 帳號, 選用免費的 PLM 模組, 取得各分組的產品生命週期管理系統網域, 並將參考論文的協同翻譯流程作為工作項目, 在各分組的 PLM 網域系統中留下任務分配與紀錄, 最終產出為一份參考論文的中英文翻譯並列 pdf 檔案, 其中包含各組員的心得報告.&lt;/p&gt;
+&lt;p&gt;3.指定在參考論文的翻譯與閱讀過程, 將各組員的 cd2024 課程倉儲納為分組倉儲的子模組, 可以將各組員倉儲中的 LaTeX 原始資料, 整合至分組倉儲中, 採 Github Actions 或近端使用 MikTeX 建立分組的參考論文閱讀報告 pdf 檔案(教學).&lt;/p&gt;
+&lt;p&gt;4.要求各分組採協同方式, 在各教學影片上填上字幕並嵌入個人網站, 分工整理影片逐字稿與教學重點, 最後完成期中自評, 在期中考週將自評成績送至教務處.&lt;/p&gt;
+&lt;p&gt;5.要求下載 Siemens NX 1872 至個人隨身碟或電腦 (含筆電), 後續專案系統的零組件繪圖可採電腦輔助設計室固態硬碟所安裝的 NX1872 或隨身碟中的可攜系統, 必須透過連網取得認證後才能開啟.&lt;/p&gt;
+&lt;p&gt;6.提醒 CoppeliaSim 不同版本中存檔上的差異, 並強調 cd2024 將沿用 cad2023 課程中所使用的 4.5.1 版.&lt;/p&gt;
+&lt;p&gt;7.提示 各分組可以利用可攜式 Sourcetree 套件, 在近端充分了解個人倉儲與分組倉儲的各種改版或解決衝突議題.&lt;/p&gt;
+&lt;p&gt;8.在第七週摘要出 cd2024 各項分組協同模式的要點及執行方法.&lt;/p&gt;
+&lt;p&gt;9.在第八週說明如何應用 AI 協助先前閱讀論文, 整理資料以及延伸模擬程式的方法, 並提出既存鋼球平衡台控制與模擬的實習步驟.&lt;/p&gt;
+&lt;p&gt;10.第十週起, 要求學員完成三項實習任務. (建立倉儲與網站連結、PID 控制文獻整理、NX 平台零組件繪圖)&lt;/p&gt;
+&lt;p&gt;11.第十二週的三項實習任務 (NXOpen 零組件繪製、分組倉儲設為評分倉儲子模組、足球機器人場景模擬).&lt;/p&gt;</content><category term="w13"></category><category term="網誌編寫"></category></entry><entry><title>41123205-W12</title><link href="./41123205-W12-blog.html" rel="alternate"></link><published>2024-05-09T20:18:00+08:00</published><updated>2024-06-12T14:35:51+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-05-09:./41123205-W12-blog.html</id><summary type="html">&lt;p&gt;各學員利用 NX 1872 繪製鋼球平衡台所需的零組件, 將各分組倉儲設為評分倉儲的子模組, 跨網路操控模擬場景裝置.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;各學員利用 NX 1872 繪製鋼球平衡台所需的零組件, 將各分組倉儲設為評分倉儲的子模組, 跨網路操控模擬場景裝置.&lt;/p&gt;
 
 
 &lt;h1&gt;鋼球平衡台自動控制系統模擬&lt;/h1&gt;
 &lt;p&gt;NXOpen Python 程式
 &lt;a href="https://www.google.com.tw/"&gt;TO GOOGLE&lt;/a&gt;
-輸入https://drive.google.com/file/d/1DmwGGZOWa9V9j4-biT4ZLUAbon_0DiEC/view?usp=drive_link下在零件檔與https://drive.google.com/file/d/1ZOICXm_jkRpNZD92DL3qMpA9zQIzdom5/view?usp=drive_link之NXOpen Python 程式&lt;/p&gt;
+輸入https://drive.google.com/file/d/1DmwGGZOWa9V9j4-biT4ZLUAbon_0DiEC/view?usp=drive_link下載零件檔與https://drive.google.com/file/d/1ZOICXm_jkRpNZD92DL3qMpA9zQIzdom5/view?usp=drive_link之NXOpen Python 程式&lt;/p&gt;
 &lt;p&gt;心得:我一開始認為NX是一個非常不直覺得程式，因為每一次當我要在自己所畫的模型之中穿出一個孔時，就常常會要重新選擇挖孔還是增長，所以來終於習慣NX的擠出功能了，繪畫的速度就較為快速了。&lt;/p&gt;</content><category term="w12"></category><category term="網誌編寫"></category></entry><entry><title>41123205-W11</title><link href="./41123205-W11-blog.html" rel="alternate"></link><published>2024-05-02T21:18:00+08:00</published><updated>2024-05-30T04:57:51+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-05-02:./41123205-W11-blog.html</id><summary type="html">&lt;p&gt;各學員利用 NX 1872 繪製鋼球平衡台所需的零組件.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;各學員利用 NX 1872 繪製鋼球平衡台所需的零組件.&lt;/p&gt;
 
@@ -178,25 +178,25 @@ https://youtu.be/PVvuAvX78LQ?si=5Wv_U9Jq_6Mav_tR&lt;/p&gt;</content><category te
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;legend&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tight_layout&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="w9"></category><category term="網誌編寫"></category></entry><entry><title>41123205-W8</title><link href="./41123205-W8-blog.html" rel="alternate"></link><published>2024-04-11T19:00:00+08:00</published><updated>2024-05-30T04:57:51+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-04-11:./41123205-W8-blog.html</id><summary type="html">&lt;p&gt;錄開學至現在所做的進度&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="w9"></category><category term="網誌編寫"></category></entry><entry><title>41123205-W8</title><link href="./41123205-W8-blog.html" rel="alternate"></link><published>2024-04-11T19:00:00+08:00</published><updated>2024-06-12T14:36:10+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-04-11:./41123205-W8-blog.html</id><summary type="html">&lt;p&gt;錄開學至現在所做的進度&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;錄開學至現在所做的進度&lt;/p&gt;
 
 
 &lt;h1&gt;期中報告影片&lt;/h1&gt;
 &lt;p&gt;錄開學至現在所做的進度
-1.在about標題下新增各成員學號及倉儲和靜態網站鏈結。 
-2.錄製個人期中影片&lt;/p&gt;</content><category term="w8"></category><category term="網誌編寫"></category></entry><entry><title>41123205-W7</title><link href="./41123205-W7-blog.html" rel="alternate"></link><published>2024-04-04T11:00:00+08:00</published><updated>2024-05-30T04:57:51+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-04-04:./41123205-W7-blog.html</id><summary type="html">&lt;p&gt;本週清明連假停課一次&lt;/p&gt;
+1.在about標題下新增各成員學號及倉儲和靜態網站鏈結。 &lt;/p&gt;
+&lt;p&gt;2.錄製個人期中影片&lt;/p&gt;</content><category term="w8"></category><category term="網誌編寫"></category></entry><entry><title>41123205-W7</title><link href="./41123205-W7-blog.html" rel="alternate"></link><published>2024-04-04T11:00:00+08:00</published><updated>2024-05-30T04:57:51+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-04-04:./41123205-W7-blog.html</id><summary type="html">&lt;p&gt;本週清明連假停課一次&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;本週清明連假停課一次&lt;/p&gt;
 
 
 &lt;h1&gt;本週清明連假&lt;/h1&gt;
-&lt;p&gt;放假休息一週&lt;/p&gt;</content><category term="w7"></category><category term="網誌編寫"></category></entry><entry><title>41123205-W6</title><link href="./41123205-W6-blog.html" rel="alternate"></link><published>2024-03-27T22:00:00+08:00</published><updated>2024-06-06T05:04:44+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-03-27:./41123205-W6-blog.html</id><summary type="html">&lt;p&gt;協同產品設計實習的第六週, 說明協同 NX 零組件繪圖以及 CoppeliaSim 場景模擬相關檔案格式.&lt;/p&gt;
+&lt;p&gt;放假休息一週&lt;/p&gt;</content><category term="w7"></category><category term="網誌編寫"></category></entry><entry><title>41123205-W6</title><link href="./41123205-W6-blog.html" rel="alternate"></link><published>2024-03-27T22:00:00+08:00</published><updated>2024-06-12T14:37:22+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-03-27:./41123205-W6-blog.html</id><summary type="html">&lt;p&gt;協同產品設計實習的第六週, 說明協同 NX 零組件繪圖以及 CoppeliaSim 場景模擬相關檔案格式.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;協同產品設計實習的第六週, 說明協同 NX 零組件繪圖以及 CoppeliaSim 場景模擬相關檔案格式.&lt;/p&gt;
 
 
 &lt;h1&gt;教學影片上字幕&lt;/h1&gt;
 &lt;p&gt;依照小組組長分配，各組員將自己所分配到之影片加上字幕和逐字稿，並上傳到個人與小組動態
-1.建立個人課程倉儲與網站
+教學影片一:建立個人課程倉儲與網站
 摘要:先進入mde.te網站的CD2024 &amp;gt;&amp;gt; 利用team code(p0961sy)加入teams團隊 &amp;gt;&amp;gt; 先登入github&amp;gt;&amp;gt;再利用https://github.com/mdecycu/cmsimde_site此連結進到cd2024的倉儲template來create一個新的倉儲&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;blockquote&gt;
@@ -204,7 +204,7 @@ https://youtu.be/PVvuAvX78LQ?si=5Wv_U9Jq_6Mav_tR&lt;/p&gt;</content><category te
 &lt;/blockquote&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;心得:這部影片裡的內容應該是淺顯易懂的，所以應該很容易就做出來了。&lt;/p&gt;
-&lt;p&gt;13.利用 Gitpod 與個人 token 取得分組倉儲改版權限
+&lt;p&gt;教學影片十三:利用 Gitpod 與個人 token 取得分組倉儲改版權限
 摘要:先到gitpod &amp;gt;&amp;gt; 將token存在TERMINAL之下 &amp;gt;&amp;gt; 打cd .git和cat config &amp;gt;&amp;gt; 要編輯要先更換目錄到git之下 &amp;gt;&amp;gt; Vi config &amp;gt;&amp;gt; 是利用KJHL控制程式編碼位置 &amp;gt;&amp;gt; 不須使用後要到gitpod關掉才不會浪費時數&lt;/p&gt;
 &lt;p&gt;心得:gitpod這裡我看了很久但還是不知道怎麼進去的，之後再去詢問同學了。&lt;/p&gt;</content><category term="w6"></category><category term="網誌編寫"></category></entry><entry><title>41123205-W5</title><link href="./41123205-W5-blog.html" rel="alternate"></link><published>2024-03-21T11:00:00+08:00</published><updated>2024-05-30T04:57:51+08:00</updated><author><name>41123205</name></author><id>tag:None,2024-03-21:./41123205-W5-blog.html</id><summary type="html">&lt;p&gt;協同產品設計實習的第五週, 教學內容為先前影片整理、分組網誌的統整與 NX 零組件繪圖.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;協同產品設計實習的第五週, 教學內容為先前影片整理、分組網誌的統整與 NX 零組件繪圖.&lt;/p&gt;
