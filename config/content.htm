@@ -6,7 +6,7 @@
 <p>網誌: <span style="color: #0000ff;"><a href="https://41123205wang-ze-xiang.github.io/cd2024/blog" style="color: #0000ff;">https://41123205wang-ze-xiang.github.io/cd2024/blog</a></span></p>
 <p>簡報: <span style="color: #0000ff;"><a href="https://41123205wang-ze-xiang.github.io/cd2024/reveal" style="color: #0000ff;">https://41123205wang-ze-xiang.github.io/cd2024/reveal</a></span></p>
 <p>倉儲: <span style="color: #0000ff;"><a href="https://github.com/41123205WANG-ZE-XIANG/cd2024" style="color: #0000ff;">https://github.com/41123205WANG-ZE-XIANG/cd2024</a></span></p>
-<h1><span style="color: #000000;">w17</span></h1>
+<h1>w17</h1>
 <p>項目一</p>
 <p><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/41123205_nfu_edu_tw/ESNTVDDL59VAgpR12VlidpcBiXC_iVvgY7gNRo5qfPwA_w?e=vv8Wce">車身檔</a></p>
 <p><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/41123205_nfu_edu_tw/EQ45nRxqBEZLkq18jMTrA-cBE-ucZ0WidsW-YKPybTzflA?e=eK9HAi">車身過程檔</a></p>
@@ -20,8 +20,63 @@
 <p><span>組合影片</span></p>
 <p><span><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/p2P_qMSDrj4" width="560"></iframe></span></p>
 <p><span>項目三</span></p>
-<p><span></span></p>
-<h1>w12</h1>
+<p><span><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/5-jrkeYClwg" width="560"></iframe></span></p>
+<p><span>程式模擬影片</span></p>
+<p><span>程式碼:</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false"># pip install pyzmq cbor keyboard
+from zmqRemoteApi import RemoteAPIClient
+from zmqRemoteApi_IPv6 import RemoteAPIClient
+import keyboard
+import random
+import math
+
+
+
+client = RemoteAPIClient('localhost', 23000)
+ 
+print('Program started')
+sim = client.getObject('sim')
+sim.startSimulation()
+print('Simulation started')
+ 
+def setWheelMotion(leftSpeed, rightSpeed):
+    # Set target velocity for each wheel
+    frontLeftWheel = sim.getObject('/joint_l1')
+    frontRightWheel = sim.getObject('/joint_r1')
+    rearLeftWheel = sim.getObject('/joint_l2')
+    rearRightWheel = sim.getObject('/joint_r2')
+    sim.setJointTargetVelocity(frontLeftWheel, leftSpeed)
+    sim.setJointTargetVelocity(frontRightWheel, rightSpeed)
+    sim.setJointTargetVelocity(rearLeftWheel, leftSpeed)
+    sim.setJointTargetVelocity(rearRightWheel, rightSpeed)
+# Initialize motion variables
+leftSpeed = 0
+rightSpeed = 0
+# Main loop
+while True:
+    # Check keyboard input
+    if keyboard.is_pressed('w'):
+        leftSpeed = 10  # Forward motion
+        rightSpeed = 10  # Forward motion
+    elif keyboard.is_pressed('s'):
+        leftSpeed = -10  # Backward motion
+        rightSpeed = -10  # Backward motion
+    else:
+        leftSpeed = 0
+        rightSpeed = 0
+ 
+    if keyboard.is_pressed('a'):
+        leftSpeed -= 5  # Left turn
+        rightSpeed += 5  # Left turn
+    elif keyboard.is_pressed('d'):
+        leftSpeed += 5  # Right turn
+        rightSpeed -= 5  # Right turn
+         
+   
+    # Set motion for all wheels
+    setWheelMotion(leftSpeed, rightSpeed)
+ </pre>
+<p><span></span></p><h1>w12</h1>
 <p><span style="color: #000000;">足球機器人網際模擬</span></p>
 <ol>
 <li>在可攜程式系統安裝所需的 Python 模組: pip install pyzmq cbor keyboard</li>

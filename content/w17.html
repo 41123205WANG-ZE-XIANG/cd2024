@@ -156,8 +156,63 @@ img.add_border {
 <p><span>組合影片</span></p>
 <p><span><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/p2P_qMSDrj4" width="560"></iframe></span></p>
 <p><span>項目三</span></p>
-<p><span></span></p>
-<br />About << <a href='About.html'>Previous</a> <a href='w12.html'>Next</a> >> w12</div>
+<p><span><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/5-jrkeYClwg" width="560"></iframe></span></p>
+<p><span>程式模擬影片</span></p>
+<p><span>程式碼:</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false"># pip install pyzmq cbor keyboard
+from zmqRemoteApi import RemoteAPIClient
+from zmqRemoteApi_IPv6 import RemoteAPIClient
+import keyboard
+import random
+import math
+
+
+
+client = RemoteAPIClient('localhost', 23000)
+ 
+print('Program started')
+sim = client.getObject('sim')
+sim.startSimulation()
+print('Simulation started')
+ 
+def setWheelMotion(leftSpeed, rightSpeed):
+    # Set target velocity for each wheel
+    frontLeftWheel = sim.getObject('/joint_l1')
+    frontRightWheel = sim.getObject('/joint_r1')
+    rearLeftWheel = sim.getObject('/joint_l2')
+    rearRightWheel = sim.getObject('/joint_r2')
+    sim.setJointTargetVelocity(frontLeftWheel, leftSpeed)
+    sim.setJointTargetVelocity(frontRightWheel, rightSpeed)
+    sim.setJointTargetVelocity(rearLeftWheel, leftSpeed)
+    sim.setJointTargetVelocity(rearRightWheel, rightSpeed)
+# Initialize motion variables
+leftSpeed = 0
+rightSpeed = 0
+# Main loop
+while True:
+    # Check keyboard input
+    if keyboard.is_pressed('w'):
+        leftSpeed = 10  # Forward motion
+        rightSpeed = 10  # Forward motion
+    elif keyboard.is_pressed('s'):
+        leftSpeed = -10  # Backward motion
+        rightSpeed = -10  # Backward motion
+    else:
+        leftSpeed = 0
+        rightSpeed = 0
+ 
+    if keyboard.is_pressed('a'):
+        leftSpeed -= 5  # Left turn
+        rightSpeed += 5  # Left turn
+    elif keyboard.is_pressed('d'):
+        leftSpeed += 5  # Right turn
+        rightSpeed -= 5  # Right turn
+         
+   
+    # Set motion for all wheels
+    setWheelMotion(leftSpeed, rightSpeed)
+ </pre>
+<p><span></span></p><br />About << <a href='About.html'>Previous</a> <a href='w12.html'>Next</a> >> w12</div>
 
     <!-- footer -->
       <div class="container">
